@@ -1,7 +1,7 @@
-package com.example.vehicle_store;
+package com.example.vehicle_filedirectory_store;
 
 import com.example.vehicle_core.OwnerEntity;
-import com.example.vehicle_core.Store_Repository_Interface;
+import com.example.vehicle_core.VehicleStorage;
 import com.example.vehicle_core.VehicleDAO;
 import com.example.vehicle_core.VehicleEntity;
 
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-public class Store_Repository_Implementation implements Store_Repository_Interface {
+public class Store_Repository_Implementation implements VehicleStorage {
 
     @Override
-    public String SaveBusinessObject(VehicleDAO vehicleDAO) {
+    public String SaveVehicle(VehicleDAO vehicleDAO) {
         String resultStatus = "";
         VehicleEntity vehicle = vehicleDAO.getVehicle();
         List<OwnerEntity> owners = vehicleDAO.getOwners();
@@ -102,7 +102,7 @@ public class Store_Repository_Implementation implements Store_Repository_Interfa
 
 
     @Override
-    public VehicleDAO LoadBusinessObject(String registrationNumber) {
+    public VehicleDAO LoadVehicle(String registrationNumber) {
         VehicleDAO result = new VehicleDAO();
         VehicleEntity vehicle = new VehicleEntity();
         List<OwnerEntity> owners = new ArrayList<>();
@@ -148,5 +148,6 @@ public class Store_Repository_Implementation implements Store_Repository_Interfa
         result.setOwners(owners);
         return result;
     }
+
 
 }

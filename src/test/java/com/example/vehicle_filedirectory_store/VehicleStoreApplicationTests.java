@@ -1,4 +1,4 @@
-package com.example.vehicle_store;
+package com.example.vehicle_filedirectory_store;
 
 import org.junit.jupiter.api.Test;
 class VehicleStoreApplicationTests {
